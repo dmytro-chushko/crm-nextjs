@@ -2,7 +2,8 @@
 
 import clsx from 'clsx';
 
-interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
 }
 
