@@ -22,10 +22,9 @@ const Page = ({ params }: IPageProps) => {
   return (
     <>
       <Header>Company ({params.id})</Header>
-      {/* <p>{new Date().toTimeString()}</p> */}
+      <p>{new Date().toTimeString()}</p>
     </>
   );
 };
 
 export default Page;
-пше фвв ю
