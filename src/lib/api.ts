@@ -7,7 +7,7 @@ export const getSummaryStats = () => {
   });
 };
 
-export const getSumarySales = () => {
+export const getSummarySales = () => {
   const items = [];
 
   for (let i = 0; i < 6; i++) {
@@ -16,6 +16,21 @@ export const getSumarySales = () => {
       companyTitle: 'Costco Wholesale',
       sold: 459,
       income: 600,
+    });
+  }
+
+  return Promise.resolve(items);
+};
+
+export const getSummaryPromotions = () => {
+  const items = [];
+
+  for (let i = 0; i < 7; i++) {
+    items.push({
+      promotionId: i + 1,
+      promotionName: 'Lorem ipsum dolor',
+      companyTitle: 'Costco Wholesale',
+      discount: 40,
     });
   }
 

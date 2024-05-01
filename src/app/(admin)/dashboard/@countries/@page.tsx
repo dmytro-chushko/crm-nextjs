@@ -1,6 +1,7 @@
 import DashboardCard from '@/app/components/dashboard-card';
 import { getSummaryCountries } from '@/lib/api';
 import clsx from 'clsx';
+import Image from 'next/image';
 
 const Page = async () => {
   const data = await getSummaryCountries();
@@ -17,10 +18,11 @@ const Page = async () => {
                 'before:inline-block before:w-2 before:h-2 before:roundded-full before:align-middle before:mr-2 before:bg-purple-200',
               )}
             >
-              {`${countryTitle}`}
+              {`${countryTitle} - ${count}`}
             </p>
           ))}
         </div>
+        <Image width={395} height={262} src="/images/world.svg" alt="world" />
       </div>
     </DashboardCard>
   );
