@@ -7,7 +7,7 @@
 }
 
 .gradient:nth-child(4n + 2) {
-  background-image: url('images/mesh-gradient-2.svg');
+  background-image: url('/images/mesh-gradient-2.svg');
 }
 
 .gradient:nth-child(4n + 3) {

@@ -5,7 +5,18 @@ import SummaryTableHeader from '@/app/components/summary-table-header';
 import { getSummarySales } from '@/lib/api';
 
 const Page = async () => {
-  const data = await getSummarySales();
+  const data = await new Promise<
+    {
+      companyId: number;
+      companyTitle: string;
+      sold: number;
+      income: number;
+    }[]
+  >(res => {
+    setTimeout(() => {
+      res(getSummarySales());
+    }, 4000);
+  });
 
   return (
     <DashboardCard label="Sales dtails">
