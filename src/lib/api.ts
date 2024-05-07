@@ -25,7 +25,7 @@ export interface Category {
 
 export enum CompanyStatus {
   Active = 'active',
-  NonActive = 'notActive',
+  NotActive = 'notActive',
   Pending = 'pending',
   Suspended = 'suspended',
 }
