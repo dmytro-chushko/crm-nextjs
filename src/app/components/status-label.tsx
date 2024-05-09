@@ -11,6 +11,7 @@ export enum Status {
 interface IstatusLabelProps {
   status: CompanyStatus;
   disabled?: boolean;
+  styled?: boolean;
 }
 
 const labelStatus = {
@@ -20,7 +21,7 @@ const labelStatus = {
   [CompanyStatus.Suspended]: 'Suspended',
 };
 
-export const StatusLabel = ({ status, disabled }: IstatusLabelProps) => {
+export const StatusLabel = ({ status, disabled, styled=true }: IstatusLabelProps) => {
   return (
     <div
       className={clsx(

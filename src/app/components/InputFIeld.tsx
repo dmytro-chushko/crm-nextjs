@@ -1,6 +1,6 @@
-import { Field } from 'formik';
+import { Field, FieldAttributes } from 'formik';
 
-interface IInputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface IInputFieldProps extends React.InputHTMLAttributes<HTMLInputElement>, Pick<FieldAttributes<string>, 'as'> {
   label?: string;
 }
 
