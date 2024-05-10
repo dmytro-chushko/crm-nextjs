@@ -14,14 +14,22 @@ interface IstatusLabelProps {
   styled?: boolean;
 }
 
-const labelStatus = {
+const labelByStatus = {
   [CompanyStatus.Active]: 'Active',
   [CompanyStatus.NotActive]: 'Not Active',
   [CompanyStatus.Pending]: 'Pending',
   [CompanyStatus.Suspended]: 'Suspended',
 };
 
-export const StatusLabel = ({ status, disabled, styled=true }: IstatusLabelProps) => {
+export const StatusLabel = ({
+  status,
+  disabled,
+  styled = true,
+}: IstatusLabelProps) => {
+  const label = labelByStatus[status];
+
+  if (!styled) return <>{label}</>;
+
   return (
     <div
       className={clsx(
@@ -36,7 +44,7 @@ export const StatusLabel = ({ status, disabled, styled=true }: IstatusLabelProps
       )}
     >
       <div className="w-1 h-1 mr-2 rounded-full bg-current" />
-      {labelStatus[status]}
+      {label}
     </div>
   );
 };

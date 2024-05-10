@@ -109,13 +109,25 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
             </InputField>
           </div>
           <div className="flex flex-col flex-1 gap-5">
-            <InputField label="Name" placeholder="Name" name="name" />
+            <InputField required label="Name" placeholder="Name" name="title" />
             <InputField
               label="Category"
               placeholder="Category"
-              name="category"
+              name="categoryId"
+              as="select"
+            >
+              {categories?.map(category => (
+                <option key={category.id} value={category.id}>
+                  {category.title}
+                </option>
+              ))}
+            </InputField>
+            <InputField
+              required
+              label="Description"
+              placeholder="Description"
+              name="description"
             />
-            <InputField label="Joined date" type="date" name="date" />
             <InputField
               label="Description"
               placeholder="Description"
@@ -123,7 +135,9 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
             />
           </div>
         </div>
-        <Button type="submit">Add company</Button>
+        <Button type="submit" disabled={isPending}>
+          Add company
+        </Button>
       </Form>
     </Formik>
   );
